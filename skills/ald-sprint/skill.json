@@ -1,0 +1,28 @@
+{
+  "name": "ald-sprint",
+  "version": "1.0.0",
+  "description": "Manages sprint lifecycle for ALD workflow. Use when starting features, checking sprint scope, or completing task lists. Provides scope isolation, regression prevention, and learning capture.",
+  "type": "project",
+  "author": "ALD System",
+  "created": "2025-10-23",
+  "integration": {
+    "ald_memory": "Loads sprint context automatically",
+    "ald_orchestrator": "Coordinates sprint phases",
+    "ald_curator": "Analyzes completed sprints for patterns",
+    "ald_tester": "Validates sprints with regression checks",
+    "ald_policies": "Enforces 12 sprint-specific policies"
+  },
+  "files": {
+    "active": "Current sprint in progress (if any)",
+    "history": "Completed sprints for analysis",
+    "templates": "Templates for planning, progress, retrospective",
+    "policies": "12 sprint management policies"
+  },
+  "commands": [
+    "sprint:plan <goal>",
+    "sprint:execute",
+    "sprint:review",
+    "sprint:retro",
+    "sprint:scope-check <file>"
+  ]
+}

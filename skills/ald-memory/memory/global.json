@@ -1,0 +1,49 @@
+{
+  "ui": {
+    "stack": "Next.js + Tailwind + shadcn/ui",
+    "preferences": [
+      "TypeScript strict mode",
+      "Component composition over inheritance",
+      "Small focused components following SRP"
+    ]
+  },
+  "database": {
+    "rules": [
+      "Explicit PKs required",
+      "Index on all FKs",
+      "No SELECT * queries",
+      "Migrations must have down() function",
+      "Use EXPLAIN ANALYZE for query validation"
+    ],
+    "preferred_orm": "Drizzle",
+    "performance": [
+      "Composite indexes for FK joins: (fk_col, parent_id)",
+      "Avoid sequential scans on large tables"
+    ]
+  },
+  "code_style": {
+    "principles": [
+      "Small components (SRP)",
+      "DRY - Don't Repeat Yourself",
+      "Strict TypeScript typing",
+      "Modular architecture"
+    ],
+    "testing": [
+      "Unit tests for business logic",
+      "Integration tests for API endpoints",
+      "E2E tests for critical user flows"
+    ],
+    "anti_patterns": [
+      "Mock data without explicit permission",
+      "Hallucinating APIs or methods",
+      "Large monolithic components"
+    ]
+  },
+  "development_workflow": {
+    "execution_mindset": "Fast and direct execution, no vague promises",
+    "ownership": "Full ownership of implementation",
+    "data_policy": "Real data only, no mocks unless explicitly requested",
+    "planning": "Collaborative - propose options, confirm path"
+  },
+  "updated_at": "2025-10-23"
+}

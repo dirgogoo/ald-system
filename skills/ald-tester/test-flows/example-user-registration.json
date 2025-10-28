@@ -1,0 +1,102 @@
+{
+  "flow_id": "flow_user_registration",
+  "name": "User Registration Flow",
+  "description": "End-to-end test for new user registration",
+  "steps": [
+    {
+      "step": 1,
+      "action": "Navigate to registration page",
+      "url": "/register",
+      "expected": "Registration form is visible"
+    },
+    {
+      "step": 2,
+      "action": "Fill in email field",
+      "selector": "input[name='email']",
+      "value": "test@example.com",
+      "expected": "Email field accepts input"
+    },
+    {
+      "step": 3,
+      "action": "Fill in password field",
+      "selector": "input[name='password']",
+      "value": "SecurePass123!",
+      "expected": "Password field accepts input (masked)"
+    },
+    {
+      "step": 4,
+      "action": "Fill in confirm password field",
+      "selector": "input[name='confirmPassword']",
+      "value": "SecurePass123!",
+      "expected": "Confirm password field accepts input"
+    },
+    {
+      "step": 5,
+      "action": "Click register button",
+      "selector": "button[type='submit']",
+      "expected": "Loading state shown"
+    },
+    {
+      "step": 6,
+      "action": "Wait for registration to complete",
+      "timeout_ms": 3000,
+      "expected": "User redirected to dashboard OR success message shown"
+    },
+    {
+      "step": 7,
+      "action": "Verify user session",
+      "check": "localStorage or cookie contains auth token",
+      "expected": "User is authenticated"
+    }
+  ],
+  "validations": {
+    "console_errors": "Must be 0",
+    "network_failures": "Must be 0",
+    "critical_network_requests": [
+      {
+        "url": "/api/auth/register",
+        "method": "POST",
+        "expected_status": 201,
+        "expected_response_keys": ["user", "token"]
+      }
+    ],
+    "accessibility": {
+      "keyboard_navigable": true,
+      "aria_labels": ["email input", "password input", "submit button"]
+    }
+  },
+  "edge_cases_to_test": [
+    {
+      "case": "Invalid email format",
+      "input": { "email": "invalid-email" },
+      "expected": "Validation error shown before submit"
+    },
+    {
+      "case": "Passwords don't match",
+      "input": { "password": "Pass1", "confirmPassword": "Pass2" },
+      "expected": "Validation error: passwords must match"
+    },
+    {
+      "case": "Weak password",
+      "input": { "password": "123" },
+      "expected": "Validation error: password too weak"
+    },
+    {
+      "case": "Email already exists",
+      "input": { "email": "existing@example.com" },
+      "expected": "API returns 409 Conflict, error message shown to user"
+    },
+    {
+      "case": "Network error",
+      "scenario": "API returns 500",
+      "expected": "User-friendly error message, no crash"
+    }
+  ],
+  "performance_targets": {
+    "page_load_ms": 1500,
+    "api_response_ms": 500,
+    "time_to_interactive_ms": 2000
+  },
+  "created_at": "2025-10-23",
+  "notes": "This is an example test flow. Real flows will be created for each feature being tested."
+}

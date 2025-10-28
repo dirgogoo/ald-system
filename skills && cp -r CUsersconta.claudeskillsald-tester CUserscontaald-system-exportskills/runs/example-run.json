@@ -1,0 +1,29 @@
+{
+  "run_id": "run_example",
+  "project": "Example Project",
+  "task": "Example task - this is a template",
+  "domain": "backend",
+  "status": "passed",
+  "started_at": "2025-10-23T12:00:00Z",
+  "completed_at": "2025-10-23T12:30:00Z",
+  "duration_minutes": 30,
+  "iterations": 2,
+  "issues_found": [
+    {
+      "type": "lint_types",
+      "description": "Missing type annotations on function parameters",
+      "solution": "Added explicit TypeScript types to all parameters",
+      "policy_violated": "code-quality/policy_3.1"
+    },
+    {
+      "type": "db_explain",
+      "description": "Sequential scan on foreign key join",
+      "solution": "Created composite index on (user_id, created_at)",
+      "policy_violated": "database/policy_1.3"
+    }
+  ],
+  "tests_passed": true,
+  "code_quality_score": 0.92,
+  "curated": false,
+  "notes": "This is an example run template. Real runs will be created by ald-orchestrator during task execution."
+}

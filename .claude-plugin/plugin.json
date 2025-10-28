@@ -1,0 +1,96 @@
+{
+  "name": "ald-system",
+  "displayName": "ALD System",
+  "version": "1.3.1",
+  "description": "Autonomous Learning & Development system with 155 validated policies, persistent memory, sprint management, E2E testing, continuous learning, and intelligent code review.",
+  "author": {
+    "name": "dirgogoo",
+    "url": "https://github.com/dirgogoo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dirgogoo/ald-system.git"
+  },
+  "homepage": "https://github.com/dirgogoo/ald-system#readme",
+  "bugs": {
+    "url": "https://github.com/dirgogoo/ald-system/issues"
+  },
+  "license": "MIT",
+  "keywords": [
+    "ai-development",
+    "code-policies",
+    "autonomous-learning",
+    "memory-system",
+    "sprint-management",
+    "e2e-testing",
+    "code-review",
+    "policy-driven",
+    "tdd",
+    "continuous-improvement"
+  ],
+  "main": "CLAUDE.md",
+  "skills": [
+    {
+      "path": "skills/ald-memory",
+      "name": "ald-memory",
+      "description": "Persistent memory across conversations"
+    },
+    {
+      "path": "skills/ald-policies",
+      "name": "ald-policies",
+      "description": "155 validated development policies"
+    },
+    {
+      "path": "skills/ald-curator",
+      "name": "ald-curator",
+      "description": "Pattern detection and learning"
+    },
+    {
+      "path": "skills/ald-tester",
+      "name": "ald-tester",
+      "description": "E2E validation as end user"
+    },
+    {
+      "path": "skills/ald-orchestrator",
+      "name": "ald-orchestrator",
+      "description": "Workflow coordination"
+    },
+    {
+      "path": "skills/ald-sprint",
+      "name": "ald-sprint",
+      "description": "Sprint management with scope isolation"
+    },
+    {
+      "path": "skills/ald-policy-finder",
+      "name": "ald-policy-finder",
+      "description": "Intelligent policy search"
+    },
+    {
+      "path": "skills/ald-code-reviewer",
+      "name": "ald-code-reviewer",
+      "description": "Code review with policy validation"
+    }
+  ],
+  "dependencies": {},
+  "optionalDependencies": {
+    "superpowers": "For ald-code-reviewer integration",
+    "nexus-orchestrator": "For advanced workflow orchestration"
+  },
+  "engines": {
+    "claude": ">=1.0.0"
+  },
+  "install": {
+    "target": "~/.claude/",
+    "files": [
+      {
+        "source": "CLAUDE.md",
+        "destination": "~/.claude/CLAUDE.md"
+      },
+      {
+        "source": "skills/",
+        "destination": "~/.claude/skills/"
+      }
+    ],
+    "postInstall": "System ready! Start any development task and ALD will automatically activate."
+  }
+}

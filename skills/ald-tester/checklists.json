@@ -1,0 +1,135 @@
+{
+  "web_app_checklist": {
+    "technical": [
+      "Unit tests pass (npm test or equivalent)",
+      "Type checking passes (tsc --noEmit)",
+      "Linting passes (eslint)",
+      "Build succeeds without errors"
+    ],
+    "functionality": [
+      "Feature works as specified in requirements",
+      "Edge cases handled (null, empty, invalid input)",
+      "Error messages are clear and actionable",
+      "Loading states shown during async operations",
+      "Success feedback provided to user"
+    ],
+    "ui_ux": [
+      "UI renders correctly on mobile (375px width)",
+      "UI renders correctly on tablet (768px width)",
+      "UI renders correctly on desktop (1920px width)",
+      "Keyboard navigation works (Tab, Enter, Esc)",
+      "Focus states are visible and clear",
+      "Animations are smooth (60fps)",
+      "No layout shift (CLS) during load"
+    ],
+    "browser": [
+      "Console has ZERO errors",
+      "Console warnings reviewed and justified",
+      "All network requests succeed (200/201 status)",
+      "No 404 errors for assets (images, fonts, etc)",
+      "No CORS errors",
+      "No memory leaks (DevTools Memory tab)"
+    ],
+    "performance": [
+      "Page load time < 3 seconds",
+      "Largest Contentful Paint (LCP) < 2.5s",
+      "First Input Delay (FID) < 100ms",
+      "Cumulative Layout Shift (CLS) < 0.1",
+      "Time to Interactive (TTI) < 5s"
+    ],
+    "accessibility": [
+      "All interactive elements keyboard accessible",
+      "All form inputs have associated labels",
+      "All images have descriptive alt text",
+      "Color contrast meets WCAG AA (4.5:1 for normal text)",
+      "Screen reader announces content correctly",
+      "No accessibility violations (axe DevTools)"
+    ]
+  },
+  "database_checklist": {
+    "schema": [
+      "Migration up() runs without errors",
+      "Migration down() successfully rolls back changes",
+      "All tables have explicit primary keys",
+      "All foreign keys have indexes",
+      "Column types are appropriate for data"
+    ],
+    "performance": [
+      "EXPLAIN ANALYZE run on all new queries",
+      "No sequential scans on tables > 1000 rows",
+      "Indexes are used in query plans",
+      "Composite indexes for multi-column queries"
+    ],
+    "data_integrity": [
+      "NOT NULL constraints on required fields",
+      "UNIQUE constraints where applicable",
+      "CHECK constraints for data validation",
+      "Foreign key constraints enforced",
+      "Row-Level Security policies enabled (if multi-tenant)"
+    ],
+    "queries": [
+      "No SELECT * queries in application code",
+      "Queries parameterized (no string concatenation)",
+      "N+1 query patterns avoided",
+      "Proper use of JOINs vs separate queries"
+    ]
+  },
+  "api_checklist": {
+    "functionality": [
+      "Returns correct HTTP status codes",
+      "Response body matches documented schema",
+      "Pagination works correctly (if applicable)",
+      "Filtering/sorting works (if applicable)",
+      "Error responses include helpful messages"
+    ],
+    "security": [
+      "Authentication required for protected endpoints",
+      "Authorization checked (user permissions/roles)",
+      "Input validated and sanitized on server",
+      "Rate limiting applied to prevent abuse",
+      "No sensitive data in error messages or logs"
+    ],
+    "performance": [
+      "Response time < 200ms for simple queries",
+      "Response time < 1s for complex queries",
+      "N+1 queries avoided",
+      "Database queries optimized",
+      "Appropriate caching strategy"
+    ],
+    "documentation": [
+      "OpenAPI/Swagger spec updated",
+      "Request/response examples provided",
+      "Error codes documented",
+      "Authentication method documented"
+    ]
+  },
+  "component_checklist": {
+    "code_quality": [
+      "Component follows Single Responsibility Principle",
+      "Props are properly typed (TypeScript)",
+      "Component is < 150 lines (excluding types)",
+      "No hardcoded strings (use i18n if applicable)",
+      "No magic numbers (extract to constants)"
+    ],
+    "functionality": [
+      "Component renders without errors",
+      "All props work as expected",
+      "Conditional rendering works correctly",
+      "Event handlers work properly",
+      "State updates trigger re-renders"
+    ],
+    "testing": [
+      "Unit tests for business logic",
+      "Tests for edge cases (null, undefined, empty)",
+      "Tests for user interactions (click, input, etc)",
+      "Snapshot tests (if UI is stable)"
+    ],
+    "accessibility": [
+      "Semantic HTML used (<button> not <div onClick>)",
+      "ARIA labels on interactive elements",
+      "Color alone is not used to convey information",
+      "Component is keyboard accessible"
+    ]
+  },
+  "updated_at": "2025-10-23"
+}

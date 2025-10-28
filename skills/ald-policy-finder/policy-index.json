@@ -1,0 +1,789 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-10-23",
+  "total_policies": 155,
+  "categories": 17,
+
+  "keywords": {
+    "validation": {
+      "policies": ["4.1", "5.9", "17.1", "17.2", "17.3", "17.4"],
+      "description": "Input validation, form validation, data validation"
+    },
+    "upload": {
+      "policies": ["16.1", "16.2", "16.3", "16.4", "16.5"],
+      "description": "File upload handling, size limits, optimization"
+    },
+    "error": {
+      "policies": ["2.9", "3.6", "13.1", "13.2", "13.3", "13.4", "13.5", "13.6", "17.3"],
+      "description": "Error handling, error boundaries, error recovery, error messages"
+    },
+    "authentication": {
+      "policies": ["4.3", "4.10", "4.12"],
+      "description": "Auth implementation, JWT, session management"
+    },
+    "database": {
+      "policies": ["1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8", "1.9", "1.10", "1.11", "1.12", "1.13"],
+      "description": "Schema design, queries, migrations, indexes"
+    },
+    "rls": {
+      "policies": ["4.7"],
+      "description": "Row-Level Security policies"
+    },
+    "migration": {
+      "policies": ["1.5", "1.13"],
+      "description": "Database migrations, schema changes"
+    },
+    "index": {
+      "policies": ["1.2", "1.3"],
+      "description": "Database indexes, composite indexes, foreign keys"
+    },
+    "api": {
+      "policies": ["5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8", "5.9", "5.10"],
+      "description": "REST API design, endpoints, status codes"
+    },
+    "security": {
+      "policies": ["4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7", "4.8", "4.9", "4.10", "4.11", "4.12", "4.13"],
+      "description": "Security best practices, XSS, CSRF, injection prevention"
+    },
+    "testing": {
+      "policies": ["6.1", "6.2", "6.3", "6.4", "6.5", "6.6", "6.7", "6.8"],
+      "description": "Unit tests, integration tests, E2E tests"
+    },
+    "performance": {
+      "policies": ["7.1", "7.2", "7.3", "7.4", "7.5", "7.6", "7.7", "7.8"],
+      "description": "Core Web Vitals, optimization, lazy loading"
+    },
+    "accessibility": {
+      "policies": ["2.3", "17.7"],
+      "description": "A11y, ARIA, keyboard navigation, screen readers"
+    },
+    "form": {
+      "policies": ["2.7", "17.1", "17.2", "17.3", "17.4", "17.5", "17.6", "17.7"],
+      "description": "Form handling, validation, submission, accessibility"
+    },
+    "state": {
+      "policies": ["14.1", "14.2", "14.3", "14.4", "14.5", "14.6", "14.7"],
+      "description": "State management, Context, Zustand, URL state"
+    },
+    "fetching": {
+      "policies": ["15.1", "15.2", "15.3", "15.4", "15.5", "15.6"],
+      "description": "Data fetching, Server Components, React Query"
+    },
+    "component": {
+      "policies": ["2.1", "2.2", "2.9", "2.10"],
+      "description": "Component design, Server Components, size, boundaries"
+    },
+    "typescript": {
+      "policies": ["3.1", "3.14"],
+      "description": "TypeScript strict mode, types, enums"
+    },
+    "logging": {
+      "policies": ["9.1", "9.2", "9.3", "9.4", "9.5", "9.6"],
+      "description": "Logging levels, structured logging, monitoring"
+    },
+    "git": {
+      "policies": ["8.1", "8.2", "8.3", "8.4", "8.5", "8.6", "8.7", "8.8"],
+      "description": "Commit messages, branches, PRs, CI/CD"
+    },
+    "sprint": {
+      "policies": ["10.1", "10.2", "10.3", "10.4", "10.5", "10.6", "10.7", "10.8", "10.9", "10.10", "10.11", "10.12"],
+      "description": "Sprint planning, execution, scope isolation, review"
+    },
+    "integration": {
+      "policies": ["11.1", "11.2", "11.3", "11.4", "11.5", "11.6", "11.7", "11.8", "11.9", "11.10", "11.11"],
+      "description": "External integrations, MCPs, SDKs, APIs"
+    },
+    "mcp": {
+      "policies": ["11.1", "11.3", "12.1", "12.2", "12.3", "12.4"],
+      "description": "MCP usage, Supabase MCP, Chrome DevTools MCP"
+    },
+    "recovery": {
+      "policies": ["13.1", "13.2", "13.3", "13.4", "13.5", "13.6"],
+      "description": "Error recovery, retry logic, fallbacks, circuit breakers"
+    },
+    "responsive": {
+      "policies": ["2.4"],
+      "description": "Mobile-first responsive design"
+    },
+    "loading": {
+      "policies": ["2.5", "2.14"],
+      "description": "Loading states, skeletons, spinners"
+    },
+    "optimistic": {
+      "policies": ["2.6"],
+      "description": "Optimistic UI updates"
+    },
+    "dry": {
+      "policies": ["3.2"],
+      "description": "Don't Repeat Yourself, code reuse"
+    },
+    "naming": {
+      "policies": ["1.9", "3.5", "3.16"],
+      "description": "Naming conventions, consistency"
+    },
+    "immutability": {
+      "policies": ["3.8"],
+      "description": "Immutable data operations"
+    },
+    "pagination": {
+      "policies": ["5.3"],
+      "description": "Cursor-based pagination"
+    },
+    "rate-limiting": {
+      "policies": ["4.6", "5.7"],
+      "description": "Rate limiting, API protection"
+    },
+    "cors": {
+      "policies": ["5.8"],
+      "description": "CORS configuration"
+    },
+    "image": {
+      "policies": ["7.3", "16.2"],
+      "description": "Image optimization, Next.js Image, WebP"
+    },
+    "sql": {
+      "policies": ["1.4", "1.6", "4.2"],
+      "description": "SQL queries, parameterized queries, SQL injection prevention"
+    },
+    "documentation": {
+      "policies": ["3.17", "5.10"],
+      "description": "Code documentation, policy documentation, API docs"
+    }
+  },
+
+  "scenarios": {
+    "create_api_endpoint": {
+      "name": "Creating a REST API Endpoint",
+      "policies": ["4.1", "5.1", "5.2", "5.9", "6.2", "3.17", "9.3"],
+      "description": "Complete checklist for creating a new API endpoint",
+      "steps": [
+        "4.1: Validate all input server-side",
+        "5.1: Use RESTful naming (plural nouns, kebab-case)",
+        "5.2: Return correct HTTP status codes",
+        "5.9: Use Zod schemas for validation",
+        "6.2: Write integration tests with real DB",
+        "3.17: Document policies applied in code",
+        "9.3: Log auth, transactions, errors"
+      ]
+    },
+    "database_migration": {
+      "name": "Creating Database Migration",
+      "policies": ["1.1", "1.2", "1.5", "1.8", "1.9", "1.12", "3.17"],
+      "description": "Complete checklist for database schema changes",
+      "steps": [
+        "1.1: Define explicit primary key",
+        "1.2: Index all foreign keys",
+        "1.5: Include down() migration for rollback",
+        "1.8: Use database constraints (NOT NULL, UNIQUE, CHECK)",
+        "1.9: Follow naming conventions (snake_case, plural tables)",
+        "1.12: Add created_at, updated_at timestamps",
+        "3.17: Document policies in migration file"
+      ]
+    },
+    "create_form": {
+      "name": "Creating a Form Component",
+      "policies": ["2.7", "17.1", "17.2", "17.3", "17.4", "17.5", "17.6", "17.7", "3.17"],
+      "description": "Complete checklist for form implementation",
+      "steps": [
+        "2.7: Client + server validation",
+        "17.1: Never trust client validation alone",
+        "17.2: Use React Hook Form",
+        "17.3: Specific, actionable error messages",
+        "17.4: Validate on blur, not keystroke",
+        "17.5: Track isDirty, isValid, isSubmitting, errors",
+        "17.6: Disable button during submission",
+        "17.7: Labels, ARIA, error announcements",
+        "3.17: Document policies applied"
+      ]
+    },
+    "add_rls_policy": {
+      "name": "Adding Row-Level Security Policy",
+      "policies": ["4.7", "1.8", "6.2", "3.17"],
+      "description": "Complete checklist for RLS implementation",
+      "steps": [
+        "4.7: Enable RLS on all multi-tenant tables",
+        "1.8: Use database constraints for data integrity",
+        "6.2: Test with real database",
+        "3.17: Document policy in SQL comments"
+      ]
+    },
+    "file_upload": {
+      "name": "Implementing File Upload",
+      "policies": ["16.1", "16.2", "16.3", "16.4", "16.5", "4.1", "3.17"],
+      "description": "Complete checklist for file upload feature",
+      "steps": [
+        "16.1: Enforce max file size (e.g., 5MB)",
+        "16.2: Optimize images (Next.js Image, sharp, WebP)",
+        "16.3: Show progress bar for >1MB files",
+        "16.4: Use chunked uploads for >10MB",
+        "16.5: Validate MIME type + magic bytes server-side",
+        "4.1: Validate file metadata server-side",
+        "3.17: Document policies applied"
+      ]
+    },
+    "ui_component": {
+      "name": "Creating UI Component",
+      "policies": ["2.1", "2.2", "2.3", "2.4", "2.5", "2.9", "14.1", "3.17"],
+      "description": "Complete checklist for UI components",
+      "steps": [
+        "2.1: Default to Server Components",
+        "2.2: Single responsibility, <150 lines",
+        "2.3: Semantic HTML, ARIA, keyboard nav",
+        "2.4: Mobile-first responsive design",
+        "2.5: Handle loading/error states",
+        "2.9: Add Error Boundary",
+        "14.1: Server state on server, client state on client",
+        "3.17: Document policies in component"
+      ]
+    },
+    "external_integration": {
+      "name": "Integrating External API/Service",
+      "policies": ["11.6", "11.7", "11.8", "11.9", "11.10", "11.11", "13.2", "3.17"],
+      "description": "Complete checklist for external integrations",
+      "steps": [
+        "11.6: Check memory first (memory/integrations.[api])",
+        "11.7: Use official SDK if available",
+        "11.8: Read official docs (WebFetch)",
+        "11.9: Follow user-provided docs literally",
+        "11.10: Error handling, rate limits, retries, logging",
+        "11.11: Save to memory after success",
+        "13.2: Implement fallback mechanisms",
+        "3.17: Document integration approach"
+      ]
+    },
+    "data_fetching": {
+      "name": "Implementing Data Fetching",
+      "policies": ["15.1", "15.2", "15.3", "15.4", "15.5", "15.6", "2.5", "3.17"],
+      "description": "Complete checklist for data fetching",
+      "steps": [
+        "15.1: Server Components for static data",
+        "15.2: React Query for client data",
+        "15.3: Fetch in parallel when possible",
+        "15.4: Prefetch on hover for links",
+        "15.5: Cache aggressively with revalidation",
+        "15.6: Handle loading/error with Suspense",
+        "2.5: Show loading/error states",
+        "3.17: Document fetching strategy"
+      ]
+    },
+    "state_management": {
+      "name": "Setting Up State Management",
+      "policies": ["14.1", "14.2", "14.3", "14.4", "14.5", "14.6", "14.7", "3.17"],
+      "description": "Complete checklist for state management",
+      "steps": [
+        "14.1: Server state on server, client on client",
+        "14.2: React Context for theme, user, i18n",
+        "14.3: Zustand for complex client state",
+        "14.4: Use URL for shareable state",
+        "14.5: Avoid prop drilling (Context, composition)",
+        "14.6: Derive state when possible",
+        "14.7: Persist only necessary state",
+        "3.17: Document state strategy"
+      ]
+    },
+    "error_handling": {
+      "name": "Implementing Error Handling",
+      "policies": ["3.6", "13.1", "13.2", "13.3", "13.4", "13.5", "13.6", "2.9", "3.17"],
+      "description": "Complete checklist for error handling and recovery",
+      "steps": [
+        "3.6: Never silent catch - always handle errors",
+        "13.1: Retry with exponential backoff",
+        "13.2: Implement fallback mechanisms",
+        "13.3: Circuit breaker for failing services",
+        "13.4: Timeout for all external calls",
+        "13.5: Error boundaries for UI crashes",
+        "13.6: Graceful degradation",
+        "2.9: Add Error Boundary components",
+        "3.17: Document error strategy"
+      ]
+    },
+    "start_sprint": {
+      "name": "Starting a New Sprint",
+      "policies": ["10.1", "10.2", "10.3"],
+      "description": "Sprint planning and initialization",
+      "steps": [
+        "10.1: Clear, measurable sprint goal",
+        "10.2: Break into actionable tasks",
+        "10.3: Track progress in current-sprint.json"
+      ]
+    },
+    "use_mcp": {
+      "name": "Using MCP Tools",
+      "policies": ["11.1", "11.3", "12.1", "12.2", "12.3", "12.4"],
+      "description": "When and how to use MCP tools",
+      "steps": [
+        "11.1: List available MCPs first",
+        "11.3: Priority: MCP > SDK > HTTP",
+        "12.1: Use Supabase MCP for DB/migrations",
+        "12.2: Use Chrome DevTools MCP for debugging",
+        "12.3: Use Git MCP for repo operations",
+        "12.4: Read MCP docs before use"
+      ]
+    }
+  },
+
+  "technologies": {
+    "supabase": {
+      "name": "Supabase",
+      "policies": ["4.7", "11.6", "12.1", "1.8", "4.3", "6.2"],
+      "description": "Policies for working with Supabase",
+      "details": [
+        "4.7: Enable RLS on all tables",
+        "11.6: Check memory for Supabase patterns",
+        "12.1: Use Supabase MCP for migrations/queries",
+        "1.8: Use database constraints",
+        "4.3: Use Supabase Auth (proper authentication)",
+        "6.2: Integration tests with real Supabase DB"
+      ]
+    },
+    "nextjs": {
+      "name": "Next.js",
+      "policies": ["2.1", "2.10", "7.3", "7.4", "15.1", "15.6"],
+      "description": "Policies for Next.js applications",
+      "details": [
+        "2.1: Default to Server Components",
+        "2.10: Use Suspense boundaries",
+        "7.3: Use Next.js Image component",
+        "7.4: Code splitting with dynamic imports",
+        "15.1: Server Components for static data",
+        "15.6: Suspense for async boundaries"
+      ]
+    },
+    "react": {
+      "name": "React",
+      "policies": ["2.2", "2.9", "14.2", "14.3", "14.5", "14.6"],
+      "description": "Policies for React development",
+      "details": [
+        "2.2: Components <150 lines, single responsibility",
+        "2.9: Error Boundaries required",
+        "14.2: Context for theme, user, i18n",
+        "14.3: Zustand for complex client state",
+        "14.5: Avoid prop drilling",
+        "14.6: Derive state when possible"
+      ]
+    },
+    "typescript": {
+      "name": "TypeScript",
+      "policies": ["3.1", "3.14", "3.5"],
+      "description": "TypeScript best practices",
+      "details": [
+        "3.1: Strict mode, explicit types, no implicit any",
+        "3.14: Prefer union types over enums",
+        "3.5: Meaningful, intention-revealing names"
+      ]
+    },
+    "drizzle": {
+      "name": "Drizzle ORM",
+      "policies": ["1.1", "1.2", "1.5", "1.9", "1.12"],
+      "description": "Policies for Drizzle ORM",
+      "details": [
+        "1.1: Explicit primary keys in schema",
+        "1.2: Index all foreign keys",
+        "1.5: Include down() migration",
+        "1.9: snake_case naming, plural tables",
+        "1.12: Timestamps on all tables"
+      ]
+    },
+    "prisma": {
+      "name": "Prisma ORM",
+      "policies": ["1.1", "1.2", "1.5", "1.9", "1.12", "1.7"],
+      "description": "Policies for Prisma ORM",
+      "details": [
+        "1.1: Explicit @id in models",
+        "1.2: @@index for foreign keys",
+        "1.5: Migration files with reversibility",
+        "1.9: Naming conventions",
+        "1.12: createdAt, updatedAt fields",
+        "1.7: Avoid N+1 with include/select"
+      ]
+    },
+    "react-query": {
+      "name": "React Query / TanStack Query",
+      "policies": ["15.2", "15.5", "2.5"],
+      "description": "Policies for React Query",
+      "details": [
+        "15.2: Use for client-side data fetching",
+        "15.5: Cache aggressively, revalidate smartly",
+        "2.5: Handle loading/error states"
+      ]
+    },
+    "zod": {
+      "name": "Zod",
+      "policies": ["5.9", "17.1", "4.1"],
+      "description": "Policies for Zod validation",
+      "details": [
+        "5.9: Use Zod schemas for all API inputs",
+        "17.1: Server-side validation required",
+        "4.1: Never trust client input"
+      ]
+    },
+    "react-hook-form": {
+      "name": "React Hook Form",
+      "policies": ["17.2", "17.4", "17.5", "17.6"],
+      "description": "Policies for React Hook Form",
+      "details": [
+        "17.2: Recommended form library",
+        "17.4: Validate on blur, not keystroke",
+        "17.5: Track form state properly",
+        "17.6: Handle submission state"
+      ]
+    },
+    "tailwind": {
+      "name": "Tailwind CSS",
+      "policies": ["2.4", "2.8"],
+      "description": "Policies for Tailwind CSS",
+      "details": [
+        "2.4: Mobile-first responsive design",
+        "2.8: Use design tokens (shadcn/ui)"
+      ]
+    },
+    "stripe": {
+      "name": "Stripe",
+      "policies": ["11.6", "11.7", "11.8", "11.10", "4.1", "9.3"],
+      "description": "Policies for Stripe integration",
+      "details": [
+        "11.6: Check memory/integrations.stripe first",
+        "11.7: Use official Stripe SDK",
+        "11.8: Read Stripe docs thoroughly",
+        "11.10: Handle webhooks, errors, idempotency",
+        "4.1: Validate all payment data server-side",
+        "9.3: Log all payment transactions"
+      ]
+    },
+    "vercel": {
+      "name": "Vercel",
+      "policies": ["8.6", "8.8", "7.1"],
+      "description": "Policies for Vercel deployment",
+      "details": [
+        "8.6: Auto-deploy main, preview for PRs",
+        "8.8: Secure secret management",
+        "7.1: Monitor Core Web Vitals"
+      ]
+    },
+    "sentry": {
+      "name": "Sentry",
+      "policies": ["9.4", "9.5", "4.4"],
+      "description": "Policies for Sentry error tracking",
+      "details": [
+        "9.4: Use for production error tracking",
+        "9.5: Monitor performance metrics",
+        "4.4: Never log sensitive data"
+      ]
+    },
+    "chrome-devtools-mcp": {
+      "name": "Chrome DevTools MCP",
+      "policies": ["12.2", "11.1"],
+      "description": "Using Chrome DevTools MCP",
+      "details": [
+        "12.2: Use for browser debugging, UI testing",
+        "11.1: Check MCP availability first"
+      ]
+    },
+    "git-mcp": {
+      "name": "Git MCP",
+      "policies": ["12.3", "11.1", "8.1"],
+      "description": "Using Git MCP",
+      "details": [
+        "12.3: Use for repo operations, diffs",
+        "11.1: Check MCP availability",
+        "8.1: Follow conventional commit format"
+      ]
+    }
+  },
+
+  "categories": {
+    "1_database": {
+      "name": "Database",
+      "file": "database.md",
+      "policies": ["1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8", "1.9", "1.10", "1.11", "1.12", "1.13"],
+      "count": 13,
+      "description": "Schema design, queries, migrations, indexes, naming conventions"
+    },
+    "2_ui_ux": {
+      "name": "UI/UX",
+      "file": "ui-ux.md",
+      "policies": ["2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8", "2.9", "2.10", "2.11", "2.12", "2.13", "2.14"],
+      "count": 14,
+      "description": "Components, accessibility, responsive design, loading states"
+    },
+    "3_code_quality": {
+      "name": "Code Quality",
+      "file": "code-quality.md",
+      "policies": ["3.1", "3.2", "3.3", "3.4", "3.5", "3.6", "3.7", "3.8", "3.9", "3.10", "3.11", "3.12", "3.13", "3.14", "3.15", "3.16", "3.17"],
+      "count": 17,
+      "description": "TypeScript, DRY, naming, error handling, documentation"
+    },
+    "4_security": {
+      "name": "Security",
+      "file": "security.md",
+      "policies": ["4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7", "4.8", "4.9", "4.10", "4.11", "4.12", "4.13"],
+      "count": 13,
+      "description": "Input validation, authentication, RLS, XSS/CSRF protection"
+    },
+    "5_api_design": {
+      "name": "API Design",
+      "file": "api-design.md",
+      "policies": ["5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8", "5.9", "5.10"],
+      "count": 10,
+      "description": "REST conventions, status codes, pagination, validation"
+    },
+    "6_testing": {
+      "name": "Testing",
+      "file": "testing.md",
+      "policies": ["6.1", "6.2", "6.3", "6.4", "6.5", "6.6", "6.7", "6.8"],
+      "count": 8,
+      "description": "Unit tests, integration tests, E2E, test patterns"
+    },
+    "7_performance": {
+      "name": "Performance",
+      "file": "performance.md",
+      "policies": ["7.1", "7.2", "7.3", "7.4", "7.5", "7.6", "7.7", "7.8"],
+      "count": 8,
+      "description": "Core Web Vitals, optimization, caching, lazy loading"
+    },
+    "8_git_cicd": {
+      "name": "Git & CI/CD",
+      "file": "git-cicd.md",
+      "policies": ["8.1", "8.2", "8.3", "8.4", "8.5", "8.6", "8.7", "8.8"],
+      "count": 8,
+      "description": "Commits, branches, PRs, deployment, CI pipeline"
+    },
+    "9_logging_monitoring": {
+      "name": "Logging & Monitoring",
+      "file": "logging-monitoring.md",
+      "policies": ["9.1", "9.2", "9.3", "9.4", "9.5", "9.6"],
+      "count": 6,
+      "description": "Log levels, structured logging, error tracking, metrics"
+    },
+    "10_sprint_management": {
+      "name": "Sprint Management",
+      "file": "../../ald-sprint/policies/",
+      "policies": ["10.1", "10.2", "10.3", "10.4", "10.5", "10.6", "10.7", "10.8", "10.9", "10.10", "10.11", "10.12"],
+      "count": 12,
+      "description": "Sprint planning, execution, scope isolation, review, retrospective"
+    },
+    "11_external_integrations": {
+      "name": "External Integrations",
+      "file": "external-integrations.md",
+      "policies": ["11.1", "11.2", "11.3", "11.4", "11.5", "11.6", "11.7", "11.8", "11.9", "11.10", "11.11"],
+      "count": 11,
+      "description": "MCPs, SDKs, API integration, memory-first pattern"
+    },
+    "12_mcp_usage": {
+      "name": "MCP Usage Details",
+      "file": "mcp-usage.md",
+      "policies": ["12.1", "12.2", "12.3", "12.4"],
+      "count": 4,
+      "description": "Supabase MCP, Chrome DevTools MCP, Git MCP, Vercel MCP"
+    },
+    "13_error_recovery": {
+      "name": "Error Recovery",
+      "file": "error-recovery.md",
+      "policies": ["13.1", "13.2", "13.3", "13.4", "13.5", "13.6"],
+      "count": 6,
+      "description": "Retry logic, fallbacks, circuit breakers, graceful degradation"
+    },
+    "14_state_management": {
+      "name": "State Management",
+      "file": "state-management.md",
+      "policies": ["14.1", "14.2", "14.3", "14.4", "14.5", "14.6", "14.7"],
+      "count": 7,
+      "description": "Server/client state, Context, Zustand, URL state"
+    },
+    "15_data_fetching": {
+      "name": "Data Fetching",
+      "file": "data-fetching.md",
+      "policies": ["15.1", "15.2", "15.3", "15.4", "15.5", "15.6"],
+      "count": 6,
+      "description": "Server Components, React Query, parallel fetching, caching"
+    },
+    "16_file_uploads": {
+      "name": "File Uploads",
+      "file": "file-uploads.md",
+      "policies": ["16.1", "16.2", "16.3", "16.4", "16.5"],
+      "count": 5,
+      "description": "Size limits, optimization, progress, chunked uploads, validation"
+    },
+    "17_forms_validation": {
+      "name": "Forms & Validation",
+      "file": "forms-validation.md",
+      "policies": ["17.1", "17.2", "17.3", "17.4", "17.5", "17.6", "17.7"],
+      "count": 7,
+      "description": "Client/server validation, form libraries, error messages, accessibility"
+    }
+  },
+
+  "policy_details": {
+    "1.1": { "title": "Explicit Primary Keys", "level": "MUST", "category": "database" },
+    "1.2": { "title": "Index All Foreign Keys", "level": "MUST", "category": "database" },
+    "1.3": { "title": "Composite Indexes", "level": "SHOULD", "category": "database" },
+    "1.4": { "title": "No SELECT *", "level": "MUST", "category": "database" },
+    "1.5": { "title": "Migrations with down()", "level": "MUST", "category": "database" },
+    "1.6": { "title": "EXPLAIN ANALYZE", "level": "SHOULD", "category": "database" },
+    "1.7": { "title": "Avoid N+1 Queries", "level": "MUST", "category": "database" },
+    "1.8": { "title": "Use Database Constraints", "level": "MUST", "category": "database" },
+    "1.9": { "title": "Naming Conventions", "level": "MUST", "category": "database" },
+    "1.10": { "title": "Soft Deletes", "level": "SHOULD", "category": "database" },
+    "1.11": { "title": "Audit Trails", "level": "SHOULD", "category": "database" },
+    "1.12": { "title": "Timestamps Mandatory", "level": "MUST", "category": "database" },
+    "1.13": { "title": "Data Seeding Strategy", "level": "SHOULD", "category": "database" },
+
+    "2.1": { "title": "Server Components First", "level": "SHOULD", "category": "ui_ux" },
+    "2.2": { "title": "Small Components", "level": "SHOULD", "category": "ui_ux" },
+    "2.3": { "title": "Accessibility Mandatory", "level": "MUST", "category": "ui_ux" },
+    "2.4": { "title": "Mobile-First Responsive", "level": "MUST", "category": "ui_ux" },
+    "2.5": { "title": "Loading/Error States", "level": "MUST", "category": "ui_ux" },
+    "2.6": { "title": "Optimistic UI", "level": "SHOULD", "category": "ui_ux" },
+    "2.7": { "title": "Form Validation", "level": "MUST", "category": "ui_ux" },
+    "2.8": { "title": "Consistent Design System", "level": "SHOULD", "category": "ui_ux" },
+    "2.9": { "title": "Error Boundaries Required", "level": "MUST", "category": "ui_ux" },
+    "2.10": { "title": "Suspense Boundaries", "level": "SHOULD", "category": "ui_ux" },
+    "2.11": { "title": "Data Fetching Patterns", "level": "SHOULD", "category": "ui_ux" },
+    "2.12": { "title": "Form Validation UX", "level": "SHOULD", "category": "ui_ux" },
+    "2.13": { "title": "Empty States Required", "level": "MUST", "category": "ui_ux" },
+    "2.14": { "title": "Skeleton vs Spinner", "level": "SHOULD", "category": "ui_ux" },
+
+    "3.1": { "title": "Strict TypeScript Mode", "level": "MUST", "category": "code_quality" },
+    "3.2": { "title": "DRY", "level": "MUST", "category": "code_quality" },
+    "3.3": { "title": "Single Responsibility", "level": "MUST", "category": "code_quality" },
+    "3.4": { "title": "Early Returns", "level": "SHOULD", "category": "code_quality" },
+    "3.5": { "title": "Meaningful Names", "level": "MUST", "category": "code_quality" },
+    "3.6": { "title": "Error Handling Mandatory", "level": "MUST", "category": "code_quality" },
+    "3.7": { "title": "No Magic Numbers", "level": "SHOULD", "category": "code_quality" },
+    "3.8": { "title": "Immutability", "level": "SHOULD", "category": "code_quality" },
+    "3.9": { "title": "Test Critical Logic", "level": "MUST", "category": "code_quality" },
+    "3.10": { "title": "No Dead Code", "level": "MUST", "category": "code_quality" },
+    "3.11": { "title": "File Organization", "level": "SHOULD", "category": "code_quality" },
+    "3.12": { "title": "Comments Guidelines", "level": "SHOULD", "category": "code_quality" },
+    "3.13": { "title": "API Response Format", "level": "MUST", "category": "code_quality" },
+    "3.14": { "title": "Enum vs Union Types", "level": "SHOULD", "category": "code_quality" },
+    "3.15": { "title": "Avoid Barrel Exports", "level": "SHOULD", "category": "code_quality" },
+    "3.16": { "title": "Naming Consistency Across Layers", "level": "MUST", "category": "code_quality" },
+    "3.17": { "title": "Policy Documentation", "level": "MUST", "category": "code_quality" },
+
+    "4.1": { "title": "Never Trust User Input", "level": "MUST", "category": "security" },
+    "4.2": { "title": "Parameterized Queries", "level": "MUST", "category": "security" },
+    "4.3": { "title": "Proper Authentication", "level": "MUST", "category": "security" },
+    "4.4": { "title": "Protect Logs", "level": "MUST", "category": "security" },
+    "4.5": { "title": "Environment Variables", "level": "MUST", "category": "security" },
+    "4.6": { "title": "Rate Limiting", "level": "MUST", "category": "security" },
+    "4.7": { "title": "Row-Level Security", "level": "MUST", "category": "security" },
+    "4.8": { "title": "Sanitize HTML", "level": "MUST", "category": "security" },
+    "4.9": { "title": "HTTPS Everywhere", "level": "MUST", "category": "security" },
+    "4.10": { "title": "Least Privilege", "level": "MUST", "category": "security" },
+    "4.11": { "title": "CSRF Protection", "level": "MUST", "category": "security" },
+    "4.12": { "title": "Content Security Policy", "level": "SHOULD", "category": "security" },
+    "4.13": { "title": "Secrets Rotation", "level": "SHOULD", "category": "security" },
+
+    "5.1": { "title": "RESTful Resource Naming", "level": "MUST", "category": "api_design" },
+    "5.2": { "title": "HTTP Status Codes", "level": "MUST", "category": "api_design" },
+    "5.3": { "title": "Pagination Standard", "level": "MUST", "category": "api_design" },
+    "5.4": { "title": "Filtering and Sorting", "level": "SHOULD", "category": "api_design" },
+    "5.5": { "title": "API Versioning", "level": "SHOULD", "category": "api_design" },
+    "5.6": { "title": "Error Response Format", "level": "MUST", "category": "api_design" },
+    "5.7": { "title": "Rate Limiting Headers", "level": "SHOULD", "category": "api_design" },
+    "5.8": { "title": "CORS Configuration", "level": "MUST", "category": "api_design" },
+    "5.9": { "title": "Input Validation", "level": "MUST", "category": "api_design" },
+    "5.10": { "title": "API Documentation", "level": "SHOULD", "category": "api_design" },
+
+    "6.1": { "title": "Unit Test Coverage", "level": "SHOULD", "category": "testing" },
+    "6.2": { "title": "Integration Tests", "level": "MUST", "category": "testing" },
+    "6.3": { "title": "E2E for Critical Paths", "level": "MUST", "category": "testing" },
+    "6.4": { "title": "Mock vs Real Data", "level": "SHOULD", "category": "testing" },
+    "6.5": { "title": "Test Naming", "level": "SHOULD", "category": "testing" },
+    "6.6": { "title": "AAA Pattern", "level": "SHOULD", "category": "testing" },
+    "6.7": { "title": "Test Isolation", "level": "MUST", "category": "testing" },
+    "6.8": { "title": "Snapshot Testing", "level": "MAY", "category": "testing" },
+
+    "7.1": { "title": "Page Load Targets", "level": "SHOULD", "category": "performance" },
+    "7.2": { "title": "Core Web Vitals Monitoring", "level": "SHOULD", "category": "performance" },
+    "7.3": { "title": "Image Optimization", "level": "MUST", "category": "performance" },
+    "7.4": { "title": "Code Splitting", "level": "SHOULD", "category": "performance" },
+    "7.5": { "title": "Caching Strategies", "level": "SHOULD", "category": "performance" },
+    "7.6": { "title": "Database Query Optimization", "level": "MUST", "category": "performance" },
+    "7.7": { "title": "Bundle Size Limits", "level": "SHOULD", "category": "performance" },
+    "7.8": { "title": "Lazy Loading", "level": "SHOULD", "category": "performance" },
+
+    "8.1": { "title": "Commit Message Format", "level": "MUST", "category": "git_cicd" },
+    "8.2": { "title": "Branch Naming", "level": "MUST", "category": "git_cicd" },
+    "8.3": { "title": "Pull Request Requirements", "level": "MUST", "category": "git_cicd" },
+    "8.4": { "title": "Code Review Checklist", "level": "SHOULD", "category": "git_cicd" },
+    "8.5": { "title": "CI Pipeline", "level": "MUST", "category": "git_cicd" },
+    "8.6": { "title": "Deployment Strategy", "level": "SHOULD", "category": "git_cicd" },
+    "8.7": { "title": "Rollback Procedure", "level": "MUST", "category": "git_cicd" },
+    "8.8": { "title": "Environment Variables", "level": "MUST", "category": "git_cicd" },
+
+    "9.1": { "title": "Log Levels", "level": "MUST", "category": "logging_monitoring" },
+    "9.2": { "title": "Structured Logging", "level": "SHOULD", "category": "logging_monitoring" },
+    "9.3": { "title": "What to Log", "level": "MUST", "category": "logging_monitoring" },
+    "9.4": { "title": "Error Tracking", "level": "SHOULD", "category": "logging_monitoring" },
+    "9.5": { "title": "Performance Monitoring", "level": "SHOULD", "category": "logging_monitoring" },
+    "9.6": { "title": "Audit Logs", "level": "MUST", "category": "logging_monitoring" },
+
+    "10.1": { "title": "Clear Sprint Goal", "level": "MUST", "category": "sprint_management" },
+    "10.2": { "title": "Task Breakdown", "level": "MUST", "category": "sprint_management" },
+    "10.3": { "title": "Progress Tracking", "level": "MUST", "category": "sprint_management" },
+    "10.4": { "title": "Blocker Management", "level": "MUST", "category": "sprint_management" },
+    "10.5": { "title": "Sprint Awareness", "level": "MUST", "category": "sprint_management" },
+    "10.6": { "title": "Scope Boundary Enforcement", "level": "MUST", "category": "sprint_management" },
+    "10.7": { "title": "Regression Prevention", "level": "MUST", "category": "sprint_management" },
+    "10.8": { "title": "Impact Analysis", "level": "MUST", "category": "sprint_management" },
+    "10.9": { "title": "Definition of Done", "level": "MUST", "category": "sprint_management" },
+    "10.10": { "title": "Validation Checklist", "level": "MUST", "category": "sprint_management" },
+    "10.11": { "title": "Learning Capture", "level": "SHOULD", "category": "sprint_management" },
+    "10.12": { "title": "Continuous Improvement", "level": "SHOULD", "category": "sprint_management" },
+
+    "11.1": { "title": "MCP Priority First", "level": "MUST", "category": "external_integrations" },
+    "11.2": { "title": "Document MCP Usage", "level": "SHOULD", "category": "external_integrations" },
+    "11.3": { "title": "MCP > SDK > HTTP", "level": "MUST", "category": "external_integrations" },
+    "11.4": { "title": "Register Missing MCPs", "level": "SHOULD", "category": "external_integrations" },
+    "11.5": { "title": "Never Hallucinate MCPs", "level": "MUST", "category": "external_integrations" },
+    "11.6": { "title": "Memory-First Pattern", "level": "MUST", "category": "external_integrations" },
+    "11.7": { "title": "SDK Priority", "level": "SHOULD", "category": "external_integrations" },
+    "11.8": { "title": "Read Official Docs", "level": "MUST", "category": "external_integrations" },
+    "11.9": { "title": "User Docs = Truth", "level": "MUST", "category": "external_integrations" },
+    "11.10": { "title": "Integration Checklist", "level": "MUST", "category": "external_integrations" },
+    "11.11": { "title": "Save to Memory", "level": "MUST", "category": "external_integrations" },
+
+    "12.1": { "title": "Supabase MCP Usage", "level": "SHOULD", "category": "mcp_usage" },
+    "12.2": { "title": "Chrome DevTools MCP Usage", "level": "SHOULD", "category": "mcp_usage" },
+    "12.3": { "title": "Git MCP Usage", "level": "SHOULD", "category": "mcp_usage" },
+    "12.4": { "title": "Read MCP Docs First", "level": "MUST", "category": "mcp_usage" },
+
+    "13.1": { "title": "Retry with Exponential Backoff", "level": "SHOULD", "category": "error_recovery" },
+    "13.2": { "title": "Fallback Mechanisms", "level": "MUST", "category": "error_recovery" },
+    "13.3": { "title": "Circuit Breaker Pattern", "level": "SHOULD", "category": "error_recovery" },
+    "13.4": { "title": "Timeout All External Calls", "level": "MUST", "category": "error_recovery" },
+    "13.5": { "title": "Error Boundaries for Crashes", "level": "MUST", "category": "error_recovery" },
+    "13.6": { "title": "Graceful Degradation", "level": "SHOULD", "category": "error_recovery" },
+
+    "14.1": { "title": "Server vs Client State", "level": "MUST", "category": "state_management" },
+    "14.2": { "title": "React Context Usage", "level": "SHOULD", "category": "state_management" },
+    "14.3": { "title": "Zustand for Complex State", "level": "SHOULD", "category": "state_management" },
+    "14.4": { "title": "URL for Shareable State", "level": "SHOULD", "category": "state_management" },
+    "14.5": { "title": "Avoid Prop Drilling", "level": "SHOULD", "category": "state_management" },
+    "14.6": { "title": "Derive State", "level": "SHOULD", "category": "state_management" },
+    "14.7": { "title": "Persist Only Necessary", "level": "SHOULD", "category": "state_management" },
+
+    "15.1": { "title": "Server Components for Static", "level": "SHOULD", "category": "data_fetching" },
+    "15.2": { "title": "React Query for Client", "level": "SHOULD", "category": "data_fetching" },
+    "15.3": { "title": "Parallel Fetching", "level": "SHOULD", "category": "data_fetching" },
+    "15.4": { "title": "Prefetch on Hover", "level": "MAY", "category": "data_fetching" },
+    "15.5": { "title": "Cache Aggressively", "level": "SHOULD", "category": "data_fetching" },
+    "15.6": { "title": "Suspense for Loading", "level": "SHOULD", "category": "data_fetching" },
+
+    "16.1": { "title": "File Size Limits", "level": "MUST", "category": "file_uploads" },
+    "16.2": { "title": "Image Optimization", "level": "MUST", "category": "file_uploads" },
+    "16.3": { "title": "Upload Progress Tracking", "level": "SHOULD", "category": "file_uploads" },
+    "16.4": { "title": "Chunked Uploads", "level": "SHOULD", "category": "file_uploads" },
+    "16.5": { "title": "File Type Validation", "level": "MUST", "category": "file_uploads" },
+
+    "17.1": { "title": "Client vs Server Validation", "level": "MUST", "category": "forms_validation" },
+    "17.2": { "title": "Form Libraries", "level": "SHOULD", "category": "forms_validation" },
+    "17.3": { "title": "Error Message Patterns", "level": "MUST", "category": "forms_validation" },
+    "17.4": { "title": "Field-Level Validation", "level": "SHOULD", "category": "forms_validation" },
+    "17.5": { "title": "Form State Management", "level": "MUST", "category": "forms_validation" },
+    "17.6": { "title": "Submit Handling", "level": "MUST", "category": "forms_validation" },
+    "17.7": { "title": "Accessibility in Forms", "level": "MUST", "category": "forms_validation" }
+  }
+}

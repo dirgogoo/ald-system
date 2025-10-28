@@ -1,0 +1,60 @@
+{
+  "patterns": [
+    {
+      "id": "pattern_001",
+      "category": "database",
+      "title": "Composite indexes for FK joins",
+      "problem": "Sequential scans on FK columns causing slow queries",
+      "solution": "Create composite index (fk_col, parent_id) for frequently joined foreign keys",
+      "when_to_apply": "When EXPLAIN ANALYZE shows sequential scan on FK joins",
+      "frequency": 1,
+      "last_applied": "2025-10-23",
+      "created_at": "2025-10-23"
+    },
+    {
+      "id": "pattern_002",
+      "category": "ui",
+      "title": "Server/Client component split in Next.js",
+      "problem": "Unnecessary client-side hydration and bundle bloat",
+      "solution": "Keep parent as Server Component, only mark interactive children with 'use client'",
+      "when_to_apply": "When component doesn't need interactivity but contains interactive children",
+      "frequency": 1,
+      "last_applied": "2025-10-23",
+      "created_at": "2025-10-23"
+    },
+    {
+      "id": "pattern_003",
+      "category": "code-quality",
+      "title": "Type hints in Python/TypeScript",
+      "problem": "Missing type information leading to runtime errors",
+      "solution": "Add explicit type annotations to all function parameters and return values",
+      "when_to_apply": "Whenever creating new functions or when linter reports missing types",
+      "frequency": 1,
+      "last_applied": "2025-10-23",
+      "created_at": "2025-10-23"
+    },
+    {
+      "id": "pattern_004",
+      "category": "database",
+      "title": "Lazy loading database connections for Next.js builds",
+      "problem": "Next.js build tries to execute server code, failing when DATABASE_URL has placeholders",
+      "solution": "Use Proxy pattern or lazy initialization to defer connection until runtime. Return empty arrays in server actions when DB not configured.",
+      "when_to_apply": "When using database in Next.js with static generation and environment variables",
+      "frequency": 1,
+      "last_applied": "2025-10-23",
+      "created_at": "2025-10-23"
+    },
+    {
+      "id": "pattern_005",
+      "category": "integration",
+      "title": "Tailwind version compatibility with Next.js",
+      "problem": "Tailwind v4 has breaking changes in PostCSS config, incompatible with Next.js 14",
+      "solution": "Use Tailwind v3 for Next.js 14 projects. Tailwind v4 requires @tailwindcss/postcss package.",
+      "when_to_apply": "When setting up new Next.js 14 project with Tailwind",
+      "frequency": 1,
+      "last_applied": "2025-10-23",
+      "created_at": "2025-10-23"
+    }
+  ],
+  "updated_at": "2025-10-23"
+}

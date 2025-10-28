@@ -1,0 +1,49 @@
+{
+  "insights": [
+    {
+      "id": "insight_001",
+      "date": "2025-10-23",
+      "category": "integration",
+      "title": "Tailwind v4 incompatible with Next.js 14",
+      "description": "Tailwind CSS v4 introduced breaking changes in PostCSS configuration that are incompatible with Next.js 14's build system. The @tailwindcss/postcss plugin is now separate.",
+      "action_taken": "Documented in patterns.json (pattern_005) and project memory. Use Tailwind v3 for Next.js 14 projects.",
+      "impact": "Prevented build failures in future Next.js 14 projects",
+      "frequency": 1,
+      "projects": ["Marketplace de Peças de PC"]
+    },
+    {
+      "id": "insight_002",
+      "date": "2025-10-23",
+      "category": "database",
+      "title": "Database connection lazy loading essential for Next.js builds",
+      "description": "Next.js static generation tries to execute server code during build. If DATABASE_URL contains placeholders or is invalid, build fails. Lazy loading with Proxy pattern or graceful error handling required.",
+      "action_taken": "Documented in patterns.json (pattern_004) and project memory. Implemented Proxy pattern in db/index.ts",
+      "impact": "Allows builds to succeed without live database connection",
+      "frequency": 1,
+      "projects": ["Marketplace de Peças de PC"]
+    },
+    {
+      "id": "insight_003",
+      "date": "2025-10-23",
+      "category": "integration",
+      "title": "Supabase Auth requires @supabase/ssr for Next.js App Router",
+      "description": "Direct use of @supabase/supabase-js doesn't handle cookies correctly in Next.js 13+. The @supabase/ssr package provides createServerClient and createBrowserClient specifically for App Router.",
+      "action_taken": "Documented in project memory with 6 gotchas. Implemented proper server/client setup with middleware.",
+      "impact": "Correct auth setup from the start, avoiding cookie/session issues",
+      "frequency": 1,
+      "projects": ["Marketplace de Peças de PC"]
+    },
+    {
+      "id": "insight_004",
+      "date": "2025-10-23",
+      "category": "workflow",
+      "title": "ALD System successfully guided full project setup",
+      "description": "Complete ALD workflow (Orchestrator → Memory → Policies → Executor → Tester → Curator) successfully guided setup of marketplace project with zero rework iterations.",
+      "action_taken": "Validated all phases work as designed. Memory-First and Docs-First policies prevented common integration mistakes.",
+      "impact": "100% validation score on first iteration. All policies followed correctly.",
+      "frequency": 1,
+      "projects": ["Marketplace de Peças de PC"]
+    }
+  ],
+  "updated_at": "2025-10-23"
+}

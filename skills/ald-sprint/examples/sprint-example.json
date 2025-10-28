@@ -1,0 +1,177 @@
+{
+  "sprint_id": "sprint-008-checkout",
+  "status": "completed",
+  "goal": "Implementar checkout completo com Stripe",
+  "started_at": "2025-10-23T19:00:00Z",
+  "completed_at": "2025-10-23T22:00:00Z",
+  "scope": {
+    "in_scope": [
+      "app/checkout/**",
+      "components/checkout/**",
+      "lib/stripe.ts",
+      "db/schema/orders.ts",
+      "lib/email.ts"
+    ],
+    "off_limits": [
+      "app/auth/**",
+      "app/products/**",
+      "db/schema/users.ts",
+      "db/schema/products.ts"
+    ]
+  },
+  "tasks": [
+    {
+      "id": "task-1",
+      "title": "Criar schema de orders",
+      "status": "completed",
+      "files_modified": [
+        "db/schema/orders.ts",
+        "db/migrations/0005_create_orders.sql"
+      ],
+      "completed_at": "2025-10-23T19:30:00Z"
+    },
+    {
+      "id": "task-2",
+      "title": "Integrar Stripe SDK",
+      "status": "completed",
+      "files_modified": [
+        "lib/stripe.ts",
+        "app/api/checkout/route.ts"
+      ],
+      "completed_at": "2025-10-23T20:15:00Z"
+    },
+    {
+      "id": "task-3",
+      "title": "Criar UI de checkout",
+      "status": "completed",
+      "files_modified": [
+        "app/checkout/page.tsx",
+        "components/checkout/payment-form.tsx",
+        "components/checkout/order-summary.tsx"
+      ],
+      "completed_at": "2025-10-23T21:00:00Z"
+    },
+    {
+      "id": "task-4",
+      "title": "Adicionar email de confirmação",
+      "status": "completed",
+      "files_modified": [
+        "lib/email.ts",
+        "templates/email/order-confirmation.tsx"
+      ],
+      "notes": "Task adicionada durante sprint (scope expansion)",
+      "completed_at": "2025-10-23T21:30:00Z"
+    },
+    {
+      "id": "task-5",
+      "title": "Testes E2E do checkout",
+      "status": "completed",
+      "files_modified": [
+        "e2e/checkout.spec.ts"
+      ],
+      "completed_at": "2025-10-23T22:00:00Z"
+    }
+  ],
+  "blockers": [
+    {
+      "id": "blocker-1",
+      "description": "Missing Stripe test API key",
+      "impact": "high",
+      "status": "resolved",
+      "detected_at": "2025-10-23T19:45:00Z",
+      "resolved_at": "2025-10-23T20:00:00Z",
+      "resolution": "Got test key from PM"
+    }
+  ],
+  "decisions": [
+    {
+      "what": "Use Stripe Checkout ao invés de Payment Intents",
+      "why": "Mais simples para MVP, menos código custom, UI pronta",
+      "alternatives_considered": [
+        "Payment Intents (mais customizável mas mais complexo)",
+        "Stripe Elements (meio termo)"
+      ],
+      "timestamp": "2025-10-23T19:30:00Z"
+    },
+    {
+      "what": "Adicionar email notifications ao scope",
+      "why": "Descobrimos que checkout sem confirmação email é UX ruim",
+      "impact": "Scope expansion (4 tasks → 5 tasks)",
+      "timestamp": "2025-10-23T20:45:00Z"
+    },
+    {
+      "what": "Criar sendOrderConfirmation() ao invés de modificar sendEmail()",
+      "why": "sendEmail() é usado em 4 lugares. Modificar quebraria auth e outras features",
+      "impact_analysis": true,
+      "timestamp": "2025-10-23T21:00:00Z"
+    }
+  ],
+  "scope_changes": [
+    {
+      "type": "expansion",
+      "what": "Adicionado lib/email.ts ao in_scope",
+      "why": "Checkout precisa enviar confirmação",
+      "approved_by": "user",
+      "timestamp": "2025-10-23T20:45:00Z"
+    }
+  ],
+  "regression_baseline": {
+    "tests_passed": 45,
+    "tests_failed": 0,
+    "timestamp": "2025-10-23T19:00:00Z",
+    "command": "npm test"
+  },
+  "regression_check": {
+    "tests_passed": 48,
+    "tests_failed": 0,
+    "new_tests": 3,
+    "regressions": [],
+    "verdict": "✅ NO REGRESSIONS",
+    "timestamp": "2025-10-23T22:00:00Z"
+  },
+  "validation": {
+    "build_passed": true,
+    "tests_passed": true,
+    "console_clean": true,
+    "ux_tested": true,
+    "policies_followed": true,
+    "no_regressions": true,
+    "overall": "PASSED"
+  },
+  "metrics": {
+    "tasks_planned": 4,
+    "tasks_completed": 5,
+    "tasks_added": 1,
+    "tasks_removed": 0,
+    "files_modified": 12,
+    "new_tests_added": 3,
+    "scope_expansions": 1,
+    "blockers_encountered": 1,
+    "blockers_resolved": 1,
+    "regressions_detected": 0
+  },
+  "retrospective": {
+    "what_went_well": [
+      "Stripe integration foi mais simples que esperado",
+      "Zero regressões detectadas",
+      "Impact analysis preveniu breaking change em sendEmail()",
+      "Scope isolation policies funcionaram"
+    ],
+    "what_could_improve": [
+      "Email notifications deveria estar no planning inicial",
+      "Edge case (expired cards) descoberto tarde"
+    ],
+    "learnings": [
+      "Checkout sempre precisa email confirmation",
+      "Stripe Checkout é melhor que Payment Intents para MVP",
+      "Impact analysis template é muito útil para shared code"
+    ],
+    "patterns_detected": [
+      {
+        "name": "Email Notification Coupling",
+        "frequency": 3,
+        "recommendation": "Create policy: Consider email notifications in planning"
+      }
+    ]
+  }
+}

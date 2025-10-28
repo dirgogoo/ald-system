@@ -1,0 +1,7 @@
+{
+  "queue": [],
+  "completed": [],
+  "failed": [],
+  "notes": "Task queue managed by orchestrator. Tasks are added when user requests work, moved to completed when validated, or failed if max iterations reached.",
+  "updated_at": "2025-10-23"
+}

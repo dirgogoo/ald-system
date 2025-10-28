@@ -1,0 +1,51 @@
+# ALD System - .gitignore
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# User data (don't commit personal projects)
+skills/ald-memory/memory/projects/*.json
+!skills/ald-memory/memory/projects/example-project.json
+
+# Active sprints (user-specific)
+skills/ald-sprint/active/*.json
+!skills/ald-sprint/active/.gitkeep
+
+# Sprint history (user-specific)
+skills/ald-sprint/history/*.json
+!skills/ald-sprint/history/.gitkeep
+
+# Curator runs (user-specific)
+skills/ald-curator/runs/*.json
+!skills/ald-curator/runs/example-run.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Node modules (if any tooling added)
+node_modules/
+
+# Python cache (if any tooling added)
+__pycache__/
+*.pyc
+*.pyo
+
+# Keep directory structure
+!**/.gitkeep
