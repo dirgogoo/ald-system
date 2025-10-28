@@ -1,5 +1,26 @@
 # Changelog
 
+## [1.3.2] - 2025-10-28
+
+### Fixed
+- Plugin installation structure now compliant with Claude Code spec
+- Created SKILL.md as proper plugin entry point
+- Updated plugin.json to use modern `claudeCode` structure
+- Changed install target to `~/.claude/skills/ald-system/` (isolated, doesn't overwrite global)
+- CLAUDE.md still installed globally for system-wide ALD rules
+
+### Changed
+- **plugin.json**: Migrated from legacy `skills` array to modern `claudeCode.skills` structure
+- **plugin.json**: Updated `main` from `CLAUDE.md` to `SKILL.md`
+- **plugin.json**: Changed install target to prevent conflicts with other plugins
+- **plugin.json**: Version bumped to 1.3.2
+
+### Added
+- **SKILL.md**: New plugin entry point with complete ALD documentation
+- Better isolation: skills install to `~/.claude/skills/ald-system/` instead of `~/.claude/skills/`
+
+---
+
 ## [1.3.1] - 2025-01-28
 
 ### Initial GitHub Release
