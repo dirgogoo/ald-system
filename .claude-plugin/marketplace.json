@@ -1,0 +1,63 @@
+{
+  "name": "ald-system-marketplace",
+  "owner": {
+    "name": "dirgogoo",
+    "url": "https://github.com/dirgogoo"
+  },
+  "metadata": {
+    "description": "ALD (Autonomous Learning & Development) system with 155 validated policies, persistent memory, sprint management, E2E testing, and continuous learning",
+    "version": "1.3.2"
+  },
+  "plugins": [
+    {
+      "name": "ald-system",
+      "displayName": "ALD System",
+      "source": "./",
+      "description": "Complete ALD system with 8 skills and 155 policies",
+      "version": "1.3.2",
+      "main": "SKILL.md",
+      "skills": [
+        {
+          "name": "ald-memory",
+          "path": "skills/ald-memory/SKILL.md",
+          "description": "Persistent memory across conversations"
+        },
+        {
+          "name": "ald-policies",
+          "path": "skills/ald-policies/SKILL.md",
+          "description": "155 validated development policies"
+        },
+        {
+          "name": "ald-curator",
+          "path": "skills/ald-curator/SKILL.md",
+          "description": "Pattern detection and learning"
+        },
+        {
+          "name": "ald-tester",
+          "path": "skills/ald-tester/SKILL.md",
+          "description": "E2E validation as end user"
+        },
+        {
+          "name": "ald-orchestrator",
+          "path": "skills/ald-orchestrator/SKILL.md",
+          "description": "Workflow coordination"
+        },
+        {
+          "name": "ald-sprint",
+          "path": "skills/ald-sprint/SKILL.md",
+          "description": "Sprint management with scope isolation"
+        },
+        {
+          "name": "ald-policy-finder",
+          "path": "skills/ald-policy-finder/SKILL.md",
+          "description": "Intelligent policy search"
+        },
+        {
+          "name": "ald-code-reviewer",
+          "path": "skills/ald-code-reviewer/SKILL.md",
+          "description": "Code review with policy validation"
+        }
+      ]
+    }
+  ]
+}
